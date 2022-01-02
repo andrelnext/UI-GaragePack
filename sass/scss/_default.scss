@@ -1,0 +1,30 @@
+@import "config";
+
+body {
+  background-color: $red;
+
+  font-size: small;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.space {
+  display: flex;
+  margin-bottom: 0.45em;
+  h1 {
+    margin-left: 0.2em;
+  }
+  h2 {
+    margin-left: 0.2em;
+  }
+}
+
+

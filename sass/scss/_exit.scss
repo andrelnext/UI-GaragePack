@@ -1,0 +1,24 @@
+.saida {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  height: 5vh;
+  width: 14vw;
+}
+
+.exit {
+  @include center;
+
+  margin-top: 3%;
+  margin-left: 80%;
+
+  width: 39px;
+  height: 35px;
+
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(22px);
+
+  border-radius: 61px;
+}

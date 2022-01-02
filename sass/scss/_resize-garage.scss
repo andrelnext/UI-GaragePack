@@ -1,0 +1,71 @@
+.interno-g {
+  height: 100%;
+  width: 100%;
+
+  padding: 10px;
+  .menu-option-car {
+    position: relative;
+  }
+}
+.container-garagem {
+  position: absolute;
+
+  border-radius: 61px;
+
+  width: 65vw;
+  height: 75vh;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  box-sizing: border-box;
+  backdrop-filter: blur(22px);
+  .car-image {
+    position: relative;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 35vh;
+      width: 35vw;
+    }
+  }
+  .scroll-g {
+    display: block;
+    height: 80%;
+    width: 16vw;
+  }
+  .g-info {
+    position: absolute;
+    top: 25%;
+    left: 77%;
+    transform: translate(-20%, -50%);
+    width: 20%;
+  }
+  .g-exit {
+    position: relative;
+    top: 0;
+    left: 15%;
+    transform: translate(0%, -50%);
+  }
+  .final {
+    position: relative;
+    top: 37.5%;
+    left: 77%;
+    transform: translate(-12.5%, -85%);
+    width: 25%;
+    button {
+      font-size: 2rem;
+    }
+  }
+}
+.align {
+
+}

@@ -1,0 +1,46 @@
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  .engine {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+
+    color: #FFFFFF;
+  }
+  .number {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+
+    color: #7DFFB9;
+  }
+}
+
+.progress {
+  width: 80%;
+  height: 1.5vh;
+}
+.progress-wrap {
+  background: rgba(196, 196, 196, 0.45);
+  border-radius: 22px;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+  .progress-bar {
+    background: rgb(92, 253, 166);
+    border-radius: 22px;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}

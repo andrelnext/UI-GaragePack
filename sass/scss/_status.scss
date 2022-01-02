@@ -1,0 +1,89 @@
+.active {
+  height: 12vh;
+}
+.align {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+  height: 8vh;
+}
+.menu-option-car {
+  position: relative;
+  align-items: flex-start;
+
+  width: 15vw;
+  .light-text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.563rem;
+    line-height: 0.688rem;
+
+    color: #FFFFFF;
+    .light {
+      margin-top: 10px;
+      margin-left: 15px;
+      margin-right: 10px;
+
+      width: 16px;
+      height: 16px;
+      border-radius: 20px;
+    }
+    .green {
+      background-color: #7DFFB9;
+    }
+    .red {
+      background-color: #c22020;
+    }
+  }
+  .car-object {
+    position: relative;
+    top: 30%;
+    left: 45%;
+    transform: translate(-92%, -50%);
+
+    height: 7.5vh;
+    width: 8.5vw;
+  }
+
+  .icon {
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+
+  .typecar {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+
+  .icon-status {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .price {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+
+    width: 100%;
+    height: 10%;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1.063rem;
+
+    color: #7DFFB9;
+  }
+}

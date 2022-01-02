@@ -1,0 +1,25 @@
+.warning {
+  flex-direction: column;
+  margin-bottom: 1.2em;
+  .title {
+    display: flex;
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+  p  {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.875rem;
+    line-height: 1.063rem;
+    text-overflow: Ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: wrap;
+    overflow: hidden;
+  }
+}

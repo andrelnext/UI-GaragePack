@@ -1,0 +1,25 @@
+.buy-car {
+  color: white;
+
+  border: none;
+  outline: none;
+
+  width: 90%;
+  height: 7vh;
+
+  background: rgba(117, 227, 161, 0.56);
+  border-radius: 20px;
+  h1 {
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.7rem;
+    line-height: 3.063rem;
+  }
+}
+
+.final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

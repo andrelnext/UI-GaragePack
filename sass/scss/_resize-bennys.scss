@@ -1,0 +1,39 @@
+.container-bennys {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  .custom-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 15vw;
+    height: 10vh;
+
+    background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+    border: 3px solid rgba(255, 255, 255, 0.28);
+    box-sizing: border-box;
+    backdrop-filter: blur(22px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 36px;
+  }
+}
+
+.next {
+  img {
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    position: absolute;
+    top: 92.5%;
+    left: 97%;
+    transform: translate(-50%, 0%);
+  }
+}

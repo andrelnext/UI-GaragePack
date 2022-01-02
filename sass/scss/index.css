@@ -1,0 +1,636 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+  background-color: #617d76;
+  font-size: small;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.space {
+  display: flex;
+  margin-bottom: 0.45em;
+}
+.space h1 {
+  margin-left: 0.2em;
+}
+.space h2 {
+  margin-left: 0.2em;
+}
+
+.interno-g {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+.interno-g .menu-option-car {
+  position: relative;
+}
+
+.container-garagem {
+  position: absolute;
+  border-radius: 61px;
+  width: 65vw;
+  height: 75vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  box-sizing: border-box;
+  backdrop-filter: blur(22px);
+}
+.container-garagem .car-image {
+  position: relative;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-garagem .car-image img {
+  height: 35vh;
+  width: 35vw;
+}
+.container-garagem .scroll-g {
+  display: block;
+  height: 80%;
+  width: 16vw;
+}
+.container-garagem .g-info {
+  position: absolute;
+  top: 25%;
+  left: 77%;
+  transform: translate(-20%, -50%);
+  width: 20%;
+}
+.container-garagem .g-exit {
+  position: relative;
+  top: 0;
+  left: 15%;
+  transform: translate(0%, -50%);
+}
+.container-garagem .final {
+  position: relative;
+  top: 37.5%;
+  left: 77%;
+  transform: translate(-12.5%, -85%);
+  width: 25%;
+}
+.container-garagem .final button {
+  font-size: 2rem;
+}
+
+.container-bennys {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+.container-bennys .custom-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 10vh;
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  box-sizing: border-box;
+  backdrop-filter: blur(22px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 36px;
+}
+
+.next img {
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: absolute;
+  top: 92.5%;
+  left: 97%;
+  transform: translate(-50%, 0%);
+}
+
+.rightbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+.leftbox {
+  padding-left: 2.5%;
+}
+
+.glass-left {
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.33);
+  backdrop-filter: blur(22px);
+  margin-top: 2%;
+  height: 90vh;
+  width: 17vw;
+  border-radius: 61px 0 0 61px;
+  margin-left: 2.5%;
+}
+
+.rotate {
+  display: flex;
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-92%, -50%);
+}
+
+.glass-right {
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.33);
+  backdrop-filter: blur(22px);
+  margin-top: 2%;
+  height: 90vh;
+  width: 17vw;
+  border-radius: 0 61px 61px 0;
+  margin-right: 2.5%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5.6%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  color: white;
+  margin-bottom: 1.4em;
+}
+
+.menu-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.688rem;
+  line-height: 0.813rem;
+  color: #FFFFFF;
+  background: rgba(196, 196, 196, 0.5);
+  border-radius: 2em;
+  width: 4.25vw;
+  height: 2.5vh;
+}
+
+.menu-cars {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 70%;
+  direction: rtl;
+}
+
+.menu-option-car {
+  background: rgba(196, 196, 196, 0.5);
+  border-radius: 2em;
+  width: 15vw;
+  height: 7.2vh;
+  margin-bottom: 7.5%;
+}
+
+.search {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.688rem;
+  line-height: 0.813rem;
+  background: rgba(196, 196, 196, 0.5);
+  border-radius: 2em;
+  width: 100%;
+  height: 2.6vh;
+  border: none;
+  outline: none;
+  color: white;
+  margin-bottom: 10%;
+}
+
+.saida {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 5vh;
+  width: 14vw;
+}
+
+.exit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+  margin-left: 80%;
+  width: 39px;
+  height: 35px;
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(22px);
+  border-radius: 61px;
+}
+
+.active {
+  height: 12vh;
+}
+
+.align {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  height: 8vh;
+}
+
+.menu-option-car {
+  position: relative;
+  align-items: flex-start;
+  width: 15vw;
+}
+.menu-option-car .light-text {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.563rem;
+  line-height: 0.688rem;
+  color: #FFFFFF;
+}
+.menu-option-car .light-text .light {
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 20px;
+}
+.menu-option-car .light-text .green {
+  background-color: #7DFFB9;
+}
+.menu-option-car .light-text .red {
+  background-color: #c22020;
+}
+.menu-option-car .car-object {
+  position: relative;
+  top: 30%;
+  left: 45%;
+  transform: translate(-92%, -50%);
+  height: 7.5vh;
+  width: 8.5vw;
+}
+.menu-option-car .icon {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.menu-option-car .typecar {
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.menu-option-car .icon-status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-option-car .price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 1.063rem;
+  color: #7DFFB9;
+}
+
+.warning {
+  flex-direction: column;
+  margin-bottom: 1.2em;
+}
+.warning .title {
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+}
+.warning p {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 1.063rem;
+  text-overflow: Ellipsis;
+  /* Required for text-overflow to do anything */
+  white-space: wrap;
+  overflow: hidden;
+}
+
+.buy-car {
+  color: white;
+  border: none;
+  outline: none;
+  width: 90%;
+  height: 7vh;
+  background: rgba(117, 227, 161, 0.56);
+  border-radius: 20px;
+}
+.buy-car h1 {
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.7rem;
+  line-height: 3.063rem;
+}
+
+.final {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-picker-panel {
+  width: 95%;
+  height: 20vh;
+  border-radius: 8px;
+  margin-bottom: 20%;
+}
+.panel-row {
+  position: relative;
+  margin: 0 10px 10px;
+}
+
+.panel-row:first-child {
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+.panel-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.color-cursor {
+  border-radius: 100%;
+  background: #ccc;
+  box-sizing: border-box;
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  border: 2px solid #fff;
+  transition: all 0.2s ease;
+}
+
+.color-cursor.dragging {
+  transition: none;
+}
+
+.color-cursor#spectrum-cursor {
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+
+.color-cursor#hue-cursor {
+  left: 50%;
+  height: 20px;
+  width: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  pointer-events: none;
+}
+
+.spectrum-map {
+  position: relative;
+  width: 12vw;
+  height: 20vh;
+  overflow: hidden;
+}
+
+#spectrum-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+}
+
+.hue-map {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: -35px;
+  width: 10px;
+}
+
+#hue-canvas {
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+}
+
+.button {
+  background: #2a3137;
+  border: 0;
+  border-radius: 4px;
+  color: #8b949a;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  outline: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+button:active {
+  background: #262c31;
+}
+
+.button.eyedropper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 68px;
+  height: 68px;
+  display: block;
+}
+
+.button.add-swatch {
+  display: block;
+  padding: 6px;
+  width: 200px;
+  margin: 10px auto 0;
+}
+
+.button.mode-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 68px;
+  height: 40px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+}
+.category .engine {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: #FFFFFF;
+}
+.category .number {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  color: #7DFFB9;
+}
+
+.progress {
+  width: 80%;
+  height: 1.5vh;
+}
+
+.progress-wrap {
+  background: rgba(196, 196, 196, 0.45);
+  border-radius: 22px;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+}
+.progress-wrap .progress-bar {
+  background: #5cfda6;
+  border-radius: 22px;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.scroll {
+  display: block;
+  z-index: 9999;
+  height: 75%;
+  width: 95%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+  /* width of the entire scrollbar */
+  border-radius: 13px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: rgba(196, 196, 196, 0.5);
+  /* color of the tracking area */
+  border-radius: 13px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  /* color of the scroll thumb */
+  border-radius: 13px;
+  /* roundness of the scroll thumb */
+}
+
+/*# sourceMappingURL=index.css.map */

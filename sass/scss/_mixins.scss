@@ -1,0 +1,41 @@
+@import 'responsive';
+
+@mixin status {
+
+}
+
+@mixin boxcars {
+
+}
+
+@mixin warning {
+
+}
+
+@mixin colorpicker {
+
+}
+
+@mixin estatisticas {
+
+}
+
+@mixin backgrounds {
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
+
+  border: 3px solid rgba(255, 255, 255, 0.33);
+  backdrop-filter: blur(22px);
+
+  margin-top: $top;
+  height: 90vh;
+  width: 17vw;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin search {}
+

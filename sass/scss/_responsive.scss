@@ -1,0 +1,18 @@
+
+
+
+$top: 2%;
+
+$radius1: 2.0em; //radius do menu option
+
+
+
+
+
+@mixin rotateicon {
+  display: flex;
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-92%, -50%);
+}
