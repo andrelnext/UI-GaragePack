@@ -398,7 +398,6 @@ $(document).ready(function () {
         sendData("bennysSetVehMod", {modType, modIndex});
     }
 
-
     function handleWheelIndexChange(self, rearWheel) {
         let wheelType = parseInt(self.getAttribute("wheel-type"));
         let wheelIndex = parseInt(self.getAttribute("wheel-index"));
