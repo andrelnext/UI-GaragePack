@@ -5,16 +5,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="../sass/scss/index.css">
     <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            type="text/javascript"
-            charset="utf-8"
-    ></script>
-</head>
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script></head>
 <body>
-<div class="container-bennys">
+<div class="container-bennys" id="actionmenuBennys">
     <div class="glass-right">
         <div class="rightbox">
-            <div class="boxes scroll-b" style="display:none">
+            <div class="boxes scroll-b shop-content" style="display:none" id="boxes">
                 <div class="box">
                     Brake
                     <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
@@ -80,7 +78,9 @@
                     </div>
                 </div>
             </div>
+            <small><h1>seu carrinho: <span id="precoTotalBennys">R$ 00,00</h1></span></small>
             <div class="warning">
+
                 <div class="title space"><img src="../assets/warning_24px.svg" alt="">
                     <h2>NOTICE</h2></div>
                 <p>Even you testing an car, you are being in <br>
@@ -115,7 +115,7 @@
                         Brake
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-parachoque" class="custom-option" >
                     <img src="../assets/bennys/bumper.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Parachoque
@@ -124,25 +124,25 @@
             </div>
         </div>
             <div class="mySlides">
-                <div class="custom-option">
+                <div id="section-motor" class="custom-option">
                     <img src="../assets/bennys/engine.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Motor
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-capo" class="custom-option">
                     <img src="../assets/bennys/hood.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Capo
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-buzina" class="custom-option">
                     <img src="../assets/bennys/horn.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Buzina
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-interior" class="custom-option">
                     <img src="../assets/bennys/interior.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Interior
@@ -150,26 +150,26 @@
                 </div>
             </div>
             <div class="mySlides">
-                <div class="custom-option">
+                <div id="section-farol" class="custom-option">
                     <img src="../assets/bennys/lamp.svg" alt="" class="slider__image">
 
                     <p class="slider__text">
                         Farol
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-blindagem" class="custom-option">
                     <img src="../assets/bennys/shieldcar.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Blindagem
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-custompneu" class="custom-option">
                     <img src="../assets/bennys/tire.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Custom Pneu
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-pneus" class="custom-option">
                     <img src="../assets/bennys/wheel.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Pneus
@@ -177,28 +177,25 @@
                 </div>
             </div>
             <div class="mySlides">
-                <div class="custom-option">
+                <div id="section-paralama" class="custom-option">
                     <img src="../assets/bennys/fender.svg" alt="" class="slider__image">
-
                     <p class="slider__text">
                         Para Lama
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-escape" class="custom-option">
                     <img src="../assets/bennys/escape.svg" alt="" class="slider__image">
-
                     <p class="slider__text">
                         Escape
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-spoiler" class="custom-option">
                     <img src="../assets/bennys/spoiler.svg" alt="" class="slider__image">
-
                     <p class="slider__text">
                         Spoiler
                     </p>
                 </div>
-                <div class="custom-option">
+                <div id="section-extras" class="custom-option">
                     <img src="../assets/bennys/spoiler.svg" alt="" class="slider__image">
                     <p class="slider__text">
                         Extras
@@ -212,3 +209,17 @@
 <script type="application/javascript" src="colorpicker.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
