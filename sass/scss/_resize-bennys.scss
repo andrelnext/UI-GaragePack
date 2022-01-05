@@ -1,16 +1,19 @@
 .container-bennys {
   display: flex;
   align-items: flex-end;
-  justify-content: space-evenly;
+  justify-content: center;
 
   position: relative;
-  left: 50%;
+  left: 43%;
   transform: translate(-50%);
+
   .custom-option {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-left: 1.5%;
 
     width: 15vw;
     height: 10vh;
@@ -22,8 +25,57 @@
     /* Note: backdrop-filter has minimal browser support */
 
     border-radius: 36px;
+    img {
+      color: white;
+    width: 65px;
+  }
+  }
+  ul {
+    display: flex;
+    li {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
+
+.espaco {
+  margin-right: 1%;
+}
+
+.boxes {
+  .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 1em;
+    margin-left: 1em;
+
+    width: 5.5vw;
+    height: 30%;
+
+    background: linear-gradient(111.68deg, rgba(255, 255, 255, 0) 7.59%, rgba(255, 255, 255, 0) 102.04%);
+    border: 3px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(22px);
+
+    border-radius: 36px;
+    .slider__image {
+      width: 4vw;
+      height: 6vh;
+    }
+    .price {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      color: #B1FFD5;
+    }
+  }
+}
+
+
 
 .next {
   img {
@@ -33,7 +85,7 @@
 
     position: absolute;
     top: 92.5%;
-    left: 97%;
+    left: 100%;
     transform: translate(-50%, 0%);
   }
 }

@@ -27,12 +27,13 @@
 }
 
 .progress {
-  width: 80%;
+  width: 60%;
   height: 1.5vh;
 }
 .progress-wrap {
   background: rgba(196, 196, 196, 0.45);
   border-radius: 22px;
+  width: 100%;
   margin: 20px 0;
   overflow: hidden;
   position: relative;

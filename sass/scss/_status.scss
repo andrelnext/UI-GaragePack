@@ -1,6 +1,38 @@
-.active {
+.active:hover {
   height: 12vh;
+
+  .icon-status {
+    visibility: hidden;
+  }
+
+  .typecar {
+    visibility: hidden;
+  }
+
+  .car-object {
+    visibility: visible;
+  }
+
+  .price {
+    visibility: visible;
+  }
+
 }
+
+.menu-option-car {
+  .icon-status {
+    visibility: visible;
+  }
+
+  .car-object {
+    visibility: hidden;
+  }
+
+  .price {
+    visibility: hidden;
+  }
+}
+
 .align {
   display: flex;
   justify-content: space-between;
@@ -8,14 +40,17 @@
 
   height: 8vh;
 }
+
 .menu-option-car {
   position: relative;
   align-items: flex-start;
 
   width: 15vw;
+
+
   .light-text {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
 
     font-family: Montserrat, sans-serif;
@@ -25,6 +60,12 @@
     line-height: 0.688rem;
 
     color: #FFFFFF;
+
+    .luz {
+      display: flex;
+      align-items: flex-end;
+    }
+
     .light {
       margin-top: 10px;
       margin-left: 15px;
@@ -34,13 +75,21 @@
       height: 16px;
       border-radius: 20px;
     }
+
     .green {
       background-color: #7DFFB9;
     }
+
     .red {
       background-color: #c22020;
     }
+
+    .typecar {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
+
   .car-object {
     position: relative;
     top: 30%;
@@ -62,11 +111,23 @@
     margin-right: 10px;
   }
 
+  .menu-option-car {
+    .statusblock {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+
   .icon-status {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .icon-status:hover {
+    visibility: hidden;
   }
 
   .price {

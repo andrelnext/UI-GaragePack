@@ -14,7 +14,33 @@
 <div class="container-bennys">
     <div class="glass-right">
         <div class="rightbox">
-            <div class="info">
+            <div class="boxes scroll-b" style="display:none">
+                <div class="box">
+                    Brake
+                    <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
+                    <div class="price">
+                        <p>2000</p>
+                        <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+                    </div>
+                </div>
+                <div class="box">
+                    Brake
+                    <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
+                    <div class="price">
+                        <p>2000</p>
+                        <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+                    </div>
+                </div>
+                <div class="box">
+                    Brake
+                    <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
+                    <div class="price">
+                        <p>2000</p>
+                        <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+                    </div>
+                </div>
+            </div>
+            <div class="info" style="display:none">
                 <div class="category">
                     <div class="engine"><p>Motor</p></div>
                     <div class="number">2000</div>
@@ -37,18 +63,20 @@
                     <div class="progress-bar progress"></div>
                 </div>
             </div>
-            <div class="color-picker-panel">
+            <div class="color-picker-panel" style="display:none">
                 <div class="space">
                     <img src="../assets/palette_24px_outlined.svg" alt="">
                     <h1>Cores</h1></div>
                 <div class="panel-row">
-                    <div class="spectrum-map">
-                        <button id="spectrum-cursor" class="color-cursor"></button>
-                        <canvas id="spectrum-canvas"></canvas>
-                    </div>
-                    <div class="hue-map">
-                        <button id="hue-cursor" class="color-cursor"></button>
-                        <canvas id="hue-canvas"></canvas>
+                    <div class="colorpicker">
+                        <div class="hue_bar">
+                            <div class="hue_picker"></div>
+                        </div>
+                        <div class="sat_rect" draggable="false">
+                            <div class="white"></div>
+                            <div class="black"></div>
+                            <div class="sat_picker"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,25 +94,121 @@
             </div>
         </div>
     </div>
-    <div class="custom-option">
-        <img src="../assets/palette_24px_outlined.svg" alt="">
-        Spoiler
-    </div>
-    <div class="custom-option">
-        <img src="../assets/palette_24px_outlined.svg" alt="">
-        Spoiler
-    </div>
-    <div class="custom-option">
-        <img src="../assets/palette_24px_outlined.svg" alt="">
-        Spoiler
-    </div>
-    <div class="custom-option">
-        <img src="../assets/palette_24px_outlined.svg" alt="">
-        Spoiler
-    </div>
-    <div class="next">
-        <img src="../assets/Arrow6.png" alt="">
+    <div class="slideshow-container">
+        <div class="espaco">
+            <div class="mySlides">
+                <div id="section-cor" class="custom-option">
+                    <img src="../assets/bennys/painter.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Cores
+                    </p>
+                </div>
+                <div id="section-reparar" class="custom-option">
+                    <img src="../assets/bennys/repairing.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Reparar
+                    </p>
+                </div>
+                <div id="section-brake" class="custom-option">
+                    <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Brake
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/bumper.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Parachoque
+                    </p>
+                </div>
+            </div>
+        </div>
+            <div class="mySlides">
+                <div class="custom-option">
+                    <img src="../assets/bennys/engine.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Motor
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/hood.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Capo
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/horn.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Buzina
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/interior.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Interior
+                    </p>
+                </div>
+            </div>
+            <div class="mySlides">
+                <div class="custom-option">
+                    <img src="../assets/bennys/lamp.svg" alt="" class="slider__image">
+
+                    <p class="slider__text">
+                        Farol
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/shieldcar.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Blindagem
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/tire.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Custom Pneu
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/wheel.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Pneus
+                    </p>
+                </div>
+            </div>
+            <div class="mySlides">
+                <div class="custom-option">
+                    <img src="../assets/bennys/fender.svg" alt="" class="slider__image">
+
+                    <p class="slider__text">
+                        Para Lama
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/escape.svg" alt="" class="slider__image">
+
+                    <p class="slider__text">
+                        Escape
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/spoiler.svg" alt="" class="slider__image">
+
+                    <p class="slider__text">
+                        Spoiler
+                    </p>
+                </div>
+                <div class="custom-option">
+                    <img src="../assets/bennys/spoiler.svg" alt="" class="slider__image">
+                    <p class="slider__text">
+                        Extras
+                    </p>
+                </div>
+            </div>
+        <a class="next" onclick="plusSlides(1)"><img src="../assets/Arrow6.png" alt=""></a>
     </div>
 </div>
+<script type="application/javascript" src="jquery.js"></script>
+<script type="application/javascript" src="colorpicker.js"></script>
 </body>
 </html>

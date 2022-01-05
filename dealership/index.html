@@ -15,38 +15,30 @@
 <div class="container">
     <div class="glass-left">
         <div class="leftbox">
-        <div class="header">
-            <div class="menu">
-                <div class="menu-option">Supers</div>
-                <div class="menu-option">Suprs</div>
-                <div class="menu-option">Sups</div>
+            <div class="header">
+                <div class="menu">
+                    <div class="menu-option">Supers</div>
+                    <div class="menu-option">Suprs</div>
+                    <div class="menu-option">Sups</div>
+                </div>
+                <input class="search" id="myInput" onkeyup="myFunction()" placeholder="Supers">
             </div>
-            <input class="search" placeholder="Supers">
-        </div>
-        <div class="menu-cars scroll">
-                <div class="menu-option-car active">
+            <div class="menu-cars scroll" id="menu-cars">
+                <div class="menu-option-car active" id="menu-option-car">
                     <div class="light-text">
-                        Liberado
-                        <div class="light green"></div>
+                        <div class="typecar" id="typecar">
+                            <h2>X6M</h2>
+                        </div>
+                        <div class="luz">
+                            <p>Liberado</p>
+                            <div class="light green"></div>
+                        </div>
                     </div>
                     <img src="../assets/visibility_off_24px.svg" alt="" class="icon-status">
                     <img src="../assets/image%2028.png" alt="" class="car-object">
                     <div class="price">
                         <p>2000</p>
                         <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
-                    </div>
-                    <div class="typecar">
-                        X6M
-                    </div>
-                </div>
-                <div class="menu-option-car align">
-                    <div class="light-text">
-                        Liberado
-                        <div class="light green"></div>
-                    </div>
-                    <img src="../assets/visibility_off_24px.svg" alt="" class="icon-status">
-                    <div class="typecar">
-                        X6M
                     </div>
                 </div>
             </div>
@@ -56,7 +48,7 @@
     <div class="glass-right">
         <div class="rightbox">
             <div class="saida">
-            <div class="exit"><img src="../assets/close_24px.svg" alt=""></div>
+                <div class="exit"><img src="../assets/close_24px.svg" alt=""></div>
             </div>
             <div class="info">
                 <div class="category">
@@ -83,17 +75,16 @@
             </div>
             <div class="color-picker-panel">
                 <div class="space">
-                <img src="../assets/palette_24px_outlined.svg" alt=""><h1>Cores</h1>
+                    <img src="../assets/palette_24px_outlined.svg" alt="">
+                    <h1>Cores</h1>
                 </div>
-                <div class="panel-row">
-                    <div class="spectrum-map">
-                        <button id="spectrum-cursor" class="color-cursor"></button>
-                        <canvas id="spectrum-canvas"></canvas>
-                    </div>
-                    <div class="hue-map">
-                        <button id="hue-cursor" class="color-cursor"></button>
-                        <canvas id="hue-canvas"></canvas>
-                    </div>
+                <div class="hue_bar">
+                    <div class="hue_picker"></div>
+                </div>
+                <div class="sat_rect" draggable="false">
+                    <div class="white"></div>
+                    <div class="black"></div>
+                    <div class="sat_picker"></div>
                 </div>
             </div>
             <div class="warning">
@@ -112,7 +103,6 @@
     </div>
 </div>
 <script type="application/javascript" src="jquery.js"></script>
-<script type="application/javascript">
-</script>
+<script type="application/javascript" src="colorpicker.js"></script>
 </body>
 </html>

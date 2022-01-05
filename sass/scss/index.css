@@ -150,9 +150,9 @@ body {
 .container-bennys {
   display: flex;
   align-items: flex-end;
-  justify-content: space-evenly;
+  justify-content: center;
   position: relative;
-  left: 50%;
+  left: 43%;
   transform: translate(-50%);
 }
 .container-bennys .custom-option {
@@ -160,6 +160,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 1.5%;
   width: 15vw;
   height: 10vh;
   background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
@@ -169,6 +170,46 @@ body {
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 36px;
 }
+.container-bennys .custom-option img {
+  color: white;
+  width: 65px;
+}
+.container-bennys ul {
+  display: flex;
+}
+.container-bennys ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.espaco {
+  margin-right: 1%;
+}
+
+.boxes .box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-left: 1em;
+  width: 5.5vw;
+  height: 30%;
+  background: linear-gradient(111.68deg, rgba(255, 255, 255, 0) 7.59%, rgba(255, 255, 255, 0) 102.04%);
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(22px);
+  border-radius: 36px;
+}
+.boxes .box .slider__image {
+  width: 4vw;
+  height: 6vh;
+}
+.boxes .box .price {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: #B1FFD5;
+}
 
 .next img {
   display: flex;
@@ -176,7 +217,7 @@ body {
   margin-right: 5px;
   position: absolute;
   top: 92.5%;
-  left: 97%;
+  left: 100%;
   transform: translate(-50%, 0%);
 }
 
@@ -288,6 +329,17 @@ body {
   margin-bottom: 10%;
 }
 
+#myInput {
+  background-image: url("../../assets/search_24px.svg");
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
 .saida {
   display: flex;
   justify-content: flex-end;
@@ -310,8 +362,30 @@ body {
   border-radius: 61px;
 }
 
-.active {
+.active:hover {
   height: 12vh;
+}
+.active:hover .icon-status {
+  visibility: hidden;
+}
+.active:hover .typecar {
+  visibility: hidden;
+}
+.active:hover .car-object {
+  visibility: visible;
+}
+.active:hover .price {
+  visibility: visible;
+}
+
+.menu-option-car .icon-status {
+  visibility: visible;
+}
+.menu-option-car .car-object {
+  visibility: hidden;
+}
+.menu-option-car .price {
+  visibility: hidden;
 }
 
 .align {
@@ -328,7 +402,7 @@ body {
 }
 .menu-option-car .light-text {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   font-family: Montserrat, sans-serif;
   font-style: normal;
@@ -336,6 +410,10 @@ body {
   font-size: 0.563rem;
   line-height: 0.688rem;
   color: #FFFFFF;
+}
+.menu-option-car .light-text .luz {
+  display: flex;
+  align-items: flex-end;
 }
 .menu-option-car .light-text .light {
   margin-top: 10px;
@@ -350,6 +428,10 @@ body {
 }
 .menu-option-car .light-text .red {
   background-color: #c22020;
+}
+.menu-option-car .light-text .typecar {
+  display: flex;
+  justify-content: flex-end;
 }
 .menu-option-car .car-object {
   position: relative;
@@ -368,11 +450,18 @@ body {
   margin-left: 15px;
   margin-right: 10px;
 }
+.menu-option-car .menu-option-car .statusblock {
+  height: 100%;
+  width: 100%;
+}
 .menu-option-car .icon-status {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.menu-option-car .icon-status:hover {
+  visibility: hidden;
 }
 .menu-option-car .price {
   display: flex;
@@ -442,6 +531,11 @@ body {
   border-radius: 8px;
   margin-bottom: 20%;
 }
+.colorpicker {
+  display: flex;
+  flex-direction: row;
+}
+
 .panel-row {
   position: relative;
   margin: 0 10px 10px;
@@ -458,105 +552,90 @@ body {
   clear: both;
 }
 
-.color-cursor {
-  border-radius: 100%;
-  background: #ccc;
-  box-sizing: border-box;
-  position: absolute;
-  pointer-events: none;
-  z-index: 2;
-  border: 2px solid #fff;
-  transition: all 0.2s ease;
-}
-
-.color-cursor.dragging {
-  transition: none;
-}
-
-.color-cursor#spectrum-cursor {
-  width: 30px;
-  height: 30px;
-  margin-left: -15px;
-  margin-top: -15px;
-}
-
-.color-cursor#hue-cursor {
-  left: 50%;
-  height: 20px;
-  width: 20px;
-  margin-top: -10px;
-  margin-left: -10px;
-  pointer-events: none;
-}
-
-.spectrum-map {
+.hue_bar {
+  background: -webkit-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+  background: linear-gradient(to bottom, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+  width: 15px;
+  height: 18.5vh;
+  border-radius: 20em;
   position: relative;
-  width: 12vw;
-  height: 20vh;
-  overflow: hidden;
-}
-
-#spectrum-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ccc;
-}
-
-.hue-map {
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-  right: -35px;
-  width: 10px;
-}
-
-#hue-canvas {
-  border-radius: 8px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ccc;
-}
-
-.button {
-  background: #2a3137;
-  border: 0;
-  border-radius: 4px;
-  color: #8b949a;
-  font-size: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  outline: none;
+  display: inline-block;
   cursor: pointer;
-  padding: 4px;
 }
 
-button:active {
-  background: #262c31;
-}
-
-.button.eyedropper {
+.hue_bar .hue_picker {
   position: absolute;
-  right: 0;
+  left: 50%;
+  border-radius: 50%;
   top: 0;
-  width: 68px;
-  height: 68px;
-  display: block;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 14px;
+  width: 14px;
+  border: 2px solid white;
+  /*pointer-events: none;*/
+  cursor: pointer;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+  background: red;
 }
 
-.button.add-swatch {
-  display: block;
-  padding: 6px;
-  width: 200px;
-  margin: 10px auto 0;
+.hue_bar .hue_picker.active {
+  width: 18px;
+  height: 18px;
 }
 
-.button.mode-toggle {
+.sat_rect {
+  width: 11vw;
+  height: 18.5vh;
+  display: inline-block;
+  background: red;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sat_rect .sat_picker {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 100%;
+  border-radius: 50%;
+  border: 2px solid white;
+  z-index: 10;
+  -webkit-transition: width 0.25s, height 0.25s;
+  transition: width 0.25s, height 0.25s;
+  background: red;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.sat_rect .sat_picker.active {
+  width: 16px;
+  height: 16px;
+}
+
+.sat_rect .black,
+.sat_rect .white {
   position: absolute;
   top: 0;
   right: 0;
-  width: 68px;
-  height: 40px;
+  bottom: 0;
+  left: 0;
+}
+
+.sat_rect .white {
+  background: -webkit-linear-gradient(left, #fff, rgba(204, 154, 129, 0));
+  background: linear-gradient(to right, #fff, rgba(204, 154, 129, 0));
+}
+
+.sat_rect .black {
+  background: -webkit-linear-gradient(bottom, #000, rgba(204, 154, 129, 0));
+  background: linear-gradient(to top, #000, rgba(204, 154, 129, 0));
 }
 
 .info {
@@ -586,13 +665,14 @@ button:active {
 }
 
 .progress {
-  width: 80%;
+  width: 60%;
   height: 1.5vh;
 }
 
 .progress-wrap {
   background: rgba(196, 196, 196, 0.45);
   border-radius: 22px;
+  width: 100%;
   margin: 20px 0;
   overflow: hidden;
   position: relative;
@@ -627,6 +707,39 @@ button:active {
 }
 
 .scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  /* color of the scroll thumb */
+  border-radius: 13px;
+  /* roundness of the scroll thumb */
+}
+
+.scroll-b {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: start;
+  margin: 0;
+  z-index: 9999;
+  height: 45%;
+  width: 95%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+.scroll-b::-webkit-scrollbar {
+  width: 8px;
+  /* width of the entire scrollbar */
+  border-radius: 13px;
+}
+
+.scroll-b::-webkit-scrollbar-track {
+  background: rgba(196, 196, 196, 0.5);
+  /* color of the tracking area */
+  border-radius: 13px;
+}
+
+.scroll-b::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.5);
   /* color of the scroll thumb */
   border-radius: 13px;
