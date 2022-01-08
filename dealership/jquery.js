@@ -1,5 +1,3 @@
-
-
 var carros = [
     { nome: "Bmw 320i", status: "Preso", img: "../assets/image%2028.png", preco: 50000 },
     { nome: "Bmw M4", status: "Liberado", img: "asdf", preco: 450000 },

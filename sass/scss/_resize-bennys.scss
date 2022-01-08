@@ -1,11 +1,11 @@
 .container-bennys {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  padding-left: 20px;
+
 
   position: relative;
-  left: 43%;
-  transform: translate(-50%);
+
 
   .custom-option {
     display: flex;
@@ -21,22 +21,22 @@
     background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
     border: 3px solid rgba(255, 255, 255, 0.28);
     box-sizing: border-box;
-    backdrop-filter: blur(22px);
     /* Note: backdrop-filter has minimal browser support */
 
     border-radius: 36px;
     img {
       color: white;
-    width: 65px;
+      width: 65px;
   }
-  }
-  ul {
-    display: flex;
-    li {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
+
+  }    .slideshow-container {
+         max-width: 75%;
+       }
+}
+
+#section-Aparência {
+  display: flex;
+  flex-direction: row;
 }
 
 .espaco {
@@ -58,8 +58,6 @@
 
     background: linear-gradient(111.68deg, rgba(255, 255, 255, 0) 7.59%, rgba(255, 255, 255, 0) 102.04%);
     border: 3px solid rgba(255, 255, 255, 0.28);
-    backdrop-filter: blur(22px);
-
     border-radius: 36px;
     .slider__image {
       width: 4vw;
@@ -74,6 +72,7 @@
     }
   }
 }
+
 
 
 

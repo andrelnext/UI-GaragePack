@@ -21,28 +21,6 @@ function CloseBennys() {
     })
 }
 
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-    let i;
-    const slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {
-        slideIndex = 1
-    }
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "flex";
-}
-
 $(document).ready(function () {
     $('#section-cor').click(function () {
             $('.boxes').css('display', 'none');
@@ -432,8 +410,8 @@ function handleWheelChange(self) {
             i <= bennysAvailableModifications[23][1][wheelType].numMods - 1;
             i++
         ) {
-            let imgUrl = i == -1 ? `${imgBennysVehicleMods}/${bennysVName}/wheel_default` : `${imgBennysVehicleMods}/wheels/type_${wheelType}/${i}`
-            let dfUrl = `${imgBennysVehicleMods}/default/23`
+            let imgUrl = i == -1 ? `../assets/bennys/wheel` : `../assets/bennys/wheel`
+            let dfUrl = `../assets/bennys/wheel`
             shopContentHtml += `
                 <div class="box ${
                 bennysVehModifications.wheelType == wheelType &&
@@ -457,8 +435,8 @@ function handleWheelChange(self) {
             i <= bennysAvailableModifications[23][1][wheelType].numMods - 1;
             i++
         ) {
-            let imgUrl = i == -1 ? `${imgBennysVehicleMods}/${bennysVName}/wheel_default` : `${imgBennysVehicleMods}/wheels/type_6/${i}`
-            let dfUrl = `${imgBennysVehicleMods}/default/23`
+            let imgUrl = i == -1 ? `../assets/bennys/wheel` : `../assets/bennys/wheel`
+            let dfUrl = `../assets/bennys/wheel`
             shopContentHtml += `
                 <div class="box ${
                 bennysVehModifications[rearWheel ? 24 : 23] == i ?
@@ -624,7 +602,7 @@ function handleHomeMenuItemClick(self) {
 
         $("#bennys-title").html("Cor da Placa");
     } else if (modIndex == "xenon") {
-        let defaultImgUrl = `${imgBennysVehicleMods}/default/xenon.png`
+        let defaultImgUrl = `../assets/bennys/lamp`
         let xenonColours = [
             "Branco",
             "Azul",
@@ -754,7 +732,7 @@ function handleHomeMenuItemClick(self) {
         `);
         $("#bennys-title").html("Cor da Fumaça do Pneu");
     } else if (modIndex == "pearlescentColour") {
-        let defaultImgUrl = `${imgBennysVehicleMods}/default/pearlescentColour.png`
+        let defaultImgUrl = `../assets/bennys/tire`
         bennysWheelColours.map((v) => {
             shopContentHtml += `
                 <div class="box ${
@@ -827,16 +805,15 @@ function handleHomeMenuItemClick(self) {
         `);
         $("#bennys-title").html("Cor Secundária");
     } else if (modIndex == "wheelColour") {
-        let defaultImgUrl = `${imgBennysVehicleMods}/default/wheelColour.png`
+        let defaultImgUrl = `../assets/bennys/wheel`
         bennysWheelColours.map((v) => {
             shopContentHtml += `
-                <div class="box ${
-                bennysVehModifications.wheelColour == v.colorindex &&
-                "box"
+                <div class=" ${
+                bennysVehModifications.wheelColour == v.colorindex
             }" onclick="handleWheelColour(this)" colour-index="${
                 v.colorindex
-            }" style="background-image: url('${defaultImgUrl}');">
-					<div>
+            }" style="background-image: url('../assets/bennys/wheel');">
+					<div class="box">
 						<span>${v.name}</span>
 						<b>R$ ${"500,00"}</b>
 					</div>
@@ -845,16 +822,15 @@ function handleHomeMenuItemClick(self) {
         });
 
         shopContentHtml =
-            '<div class="boxes">' + shopContentHtml + "</div>";
+            '<div>' + shopContentHtml + "</div>";
 
         shopContent.html(shopContentHtml);
-        $("#bennys-title").html("Cor das Rodas");
         updateHoverActive();
     } else if (modIndex == 23) {
         let text = "";
         if (bennysIsBike) {
-            let bgImg = `${imgBennysVehicleMods}/wheels/type_6/0`;
-            let dfUrl = `${imgBennysVehicleMods}/default/23`
+            let bgImg = `../assets/bennys/wheel`;
+            let dfUrl = `../assets/bennys/wheel`
             text = `
                 <div class="item" wheel-type="6" onclick="handleWheelChange(this)" style="background-image: url('${bgImg}.png');">
                     <span>Roda Dianteira</span>
@@ -873,8 +849,8 @@ function handleHomeMenuItemClick(self) {
         } else {
             for (let i = 0; i <= 12; i++) {
                 if (i != 6) {
-                    let bgImg = `${imgBennysVehicleMods}/wheels/type_${i}/0`;
-                    let dfUrl = `${imgBennysVehicleMods}/default/23`
+                    let bgImg = `../assets/bennys/wheel`;
+                    let dfUrl = `../assets/bennys/wheel`
                     text += `
                     <div class="item" wheel-type="${i}" onclick="handleWheelChange(this)" style="background-image: url('${bgImg}.png'), url('${dfUrl}.png');">
                         <span>${bennysWheelTypes[i]}</span>
@@ -896,8 +872,8 @@ function handleHomeMenuItemClick(self) {
         updateHoverActive();
     } else {
         for (let i = -1; i < bennysAvailableModifications[modIndex][0]; i++) {
-            let imgUrl = `${imgBennysVehicleMods}/${bennysVName}/mod_${modIndex}/${i}`
-            let defaultUrl = `${imgBennysVehicleMods}/default/${modIndex}`
+            let imgUrl = `../assets/bennys/wheel`
+            let defaultUrl = `../assets/bennys/wheel`
             shopContentHtml += `
 				<div class="box ${
                 bennysVehModifications[modIndex] == i && "box"
@@ -927,7 +903,7 @@ function handleHomeMenuItemClick(self) {
 }
 
 function setHomeMenu() {
-    let shopContent = $("#boxes");
+    let shopContent = $("#section-Aparência");
     // let aside = $('#bennys-aside')
     let categories = {};
     let shopContentHtml = "";
@@ -935,7 +911,7 @@ function setHomeMenu() {
 
     for (let i = 0; i <= 49; i++) {
         if (
-            bennysAvailableModifications[i] ||
+            bennysAvailableModifications[i] &&
             bennysAvailableModifications[i][0] > 0
         ) {
             let modConfig = bennysModTypes[i];
@@ -990,22 +966,18 @@ function setHomeMenu() {
     for ([k, v] of Object.entries(categories)) {
         let text = ""
         v.map((v) => {
-            let imgUrl = v.modIndex == 23 ? `${imgBennysVehicleMods}/wheels/type_0/0` : `${imgBennysVehicleMods}/${bennysVName}/mod_${v.modIndex}/-1`;
-            let defaultImgUrl = `${imgBennysVehicleMods}/default/${v.modIndex}`
+            let imgUrl = v.modIndex == 23 ? `../assets/bennys/wheel` : `../assets/bennys/wheel`;
+            let defaultImgUrl = `../assets/bennys/wheel`
             text += `
-				<div mod-index="${v.modIndex}" onclick="handleHomeMenuItemClick(this)" style="background-image: url('${imgUrl}.png'), url('${defaultImgUrl}.png');" >
-					<span>${v.name}</span>
-				</div>
+                    <div class="custom-option" mod-index="${v.modIndex}" onclick="handleHomeMenuItemClick(this)" >
+                        <img src="../assets/bennys/painter.svg" alt="" class="slider__image">
+                        <span  class="slider__text">${v.name}</span>
+                    </div>
 			`;
         });
         shopContentHtml += `
-			<div class="box" id="${k}">
-				<div>
-					<span>${bennysCategoriesNames[k]}</span>
-				</div>
-				<div>
+			<div class="mySlides" id="${k}">
 					${text}
-				</div>
 			</div>
 		`;
         // asideHtml += `
@@ -1018,6 +990,29 @@ function setHomeMenu() {
     // aside.html(asideHtml)
 
     updateHoverActive();
+    showSlides(n);
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "flex";
 }
 
 function updateHoverActive() {
@@ -1041,6 +1036,7 @@ function initBennysNUI(config, vehModifications, availableModifications, modType
     changedMods = {};
 
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
+
 
     $('#actionmenuBennys').fadeIn(1000)
     setHomeMenu();
