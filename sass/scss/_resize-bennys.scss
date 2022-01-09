@@ -1,11 +1,14 @@
 .container-bennys {
   display: flex;
   align-items: flex-end;
-  padding-left: 20px;
+  padding-left: 10px;
 
 
   position: relative;
-
+  .glass-right {
+    display: flex;
+    margin-right: 0.7%;
+  }
 
   .custom-option {
     display: flex;
@@ -13,26 +16,54 @@
     justify-content: center;
     align-items: center;
 
-    margin-left: 1.5%;
-
-    width: 15vw;
+    width: 9.5vw;
     height: 10vh;
 
     background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
     border: 3px solid rgba(255, 255, 255, 0.28);
-    box-sizing: border-box;
-    /* Note: backdrop-filter has minimal browser support */
 
     border-radius: 36px;
+
     img {
       color: white;
       width: 65px;
+    }
+
+  }
+}
+
+.slideshow-container {
+  max-width: 90%;
+  display: flex;
+  svg {
+    fill: white;
   }
 
-  }    .slideshow-container {
-         max-width: 75%;
-       }
+  #customization {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+  }
+
+  #performance {
+    display: none;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+  }
+
+  #appearance {
+    display: none;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+  }
+
+  #wheels {
+    display: none;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+  }
 }
+
 
 #section-Aparência {
   display: flex;
@@ -59,10 +90,12 @@
     background: linear-gradient(111.68deg, rgba(255, 255, 255, 0) 7.59%, rgba(255, 255, 255, 0) 102.04%);
     border: 3px solid rgba(255, 255, 255, 0.28);
     border-radius: 36px;
+
     .slider__image {
       width: 4vw;
       height: 6vh;
     }
+
     .price {
       display: flex;
       align-items: center;
@@ -74,17 +107,9 @@
 }
 
 
-
-
 .next {
   img {
-    display: flex;
-    margin-left: 5px;
-    margin-right: 5px;
-
-    position: absolute;
-    top: 92.5%;
-    left: 100%;
-    transform: translate(-50%, 0%);
+    position: relative;
+    top: 80%;
   }
 }

@@ -15,7 +15,7 @@ function CloseBennys() {
         document.onkeyup = function (data) {
             if (data.which == 27) {
                 $('#actionmenuBennys').fadeOut(1000)
-                $.post("http://rb_garagem/bennysClose")
+                $.post("http://bennys/bennysClose")
             }
         }
     })
@@ -261,7 +261,7 @@ function setVehPaintType(index, type, self) {
         }
     }
     bennysVehModifications[tableIndex] = index;
-    sendData("bennysSetPaintType", {paintType: index, type});
+    $.post("http://bennys/bennysSetPaintType", JSON.stringify({paintType: index, type}));
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
 }
 
@@ -279,7 +279,7 @@ function changeTyreSmokeColour(value) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.tyreSmokeColour = rgb;
-    sendData("bennysSetTyreSmokeColour", rgb);
+    $.post("http://bennys/bennysSetTyreSmokeColour", JSON.stringify({rgb}));
 }
 
 function bennysToogleMod(state, self) {
@@ -295,7 +295,7 @@ function bennysToogleMod(state, self) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications[mod] = state;
-    sendData("bennysToogleMod", {state, mod});
+    $.post("http://bennys/bennysToogleMod", JSON.stringify({state, mod}));
 }
 
 function changeVehColor(value, type) {
@@ -312,11 +312,11 @@ function changeVehColor(value, type) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications[tableIndex] = rgb;
-    sendData("bennysSetColor", {r: rgb.r, g: rgb.g, b: rgb.b, type});
+    $.post("http://bennys/bennysSetColor", JSON.stringify({r: rgb.r, g: rgb.g, b: rgb.b, type}));
 }
 
 function changeNeonVehColor(value) {
-    sendData("bennysSetNeonColor", hexToRgb(value));
+    $.post("http://bennys/bennysSetNeonColor", JSON.stringify(hexToRgb(value)));
 }
 
 function bennysSetConfig(data) {
@@ -341,7 +341,7 @@ function handlePearlescentColour(self) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.pearlescentColour = colourIndex;
-    sendData("bennysSetPearlescentColour", {colourIndex});
+    $.post("http://bennys/bennysSetPearlescentColour", JSON.stringify({colourIndex}));
 }
 
 function handleVehicleModChange(self) {
@@ -358,7 +358,7 @@ function handleVehicleModChange(self) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications[modType] = modIndex;
-    sendData("bennysSetVehMod", {modType, modIndex});
+    $.post("http://bennys/bennysSetVehMod", JSON.stringify({modType, modIndex}));
 }
 
 function handleWheelIndexChange(self, rearWheel) {
@@ -379,7 +379,7 @@ function handleWheelIndexChange(self, rearWheel) {
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.wheelType = wheelType;
     bennysVehModifications[rearWheel ? 24 : 23] = wheelIndex;
-    sendData("bennysSetWheel", {wheelType, wheelIndex, rearWheel});
+    $.post("http://bennys/bennysSetWheel", JSON.stringify({wheelType, wheelIndex, rearWheel}));
 }
 
 function handleWheelColour(self) {
@@ -395,7 +395,7 @@ function handleWheelColour(self) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.wheelColour = colourIndex;
-    sendData("bennysSetWheelColour", {colourIndex});
+    $.post("http://bennys/bennysSetWheelColour", JSON.stringify({colourIndex}));
 }
 
 function handleWheelChange(self) {
@@ -424,7 +424,7 @@ function handleWheelChange(self) {
                     ? "Original"
                     : bennysAvailableModifications[23][1][wheelType][i]
             }</span>
-                        <b>R$ ${"500,00"}</b>
+                        <b>R$ ${"1000,00"}</b>
                     </div>
                 </div>
             `;
@@ -448,7 +448,7 @@ function handleWheelChange(self) {
                     ? "Original"
                     : bennysAvailableModifications[23][1][wheelType][i]
             }</span>
-                        <b>R$ ${"500,00"}</b>
+                        <b>R$ ${"1000,00"}</b>
                     </div>
                 </div>
             `;
@@ -474,7 +474,7 @@ function bennysSetWindowTint(index, self) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.windowTint = index;
-    sendData("bennysSetWindowTint", {value: index});
+    $.post("http://bennys/bennysSetWindowTint", JSON.stringify({value: index}));
 }
 
 function bennysToggleNeon(self, index) {
@@ -494,10 +494,10 @@ function bennysToggleNeon(self, index) {
     self.classList[bennysVehModifications.neon[index] ? "add" : "remove"](
         "box"
     );
-    sendData("bennysToggleNeon", {
+    $.post("http://bennys/bennysToggleNeon", JSON.stringify({
         index,
         state: bennysVehModifications.neon[index],
-    });
+    }));
 }
 
 function bennysChangeNeonColor(value) {
@@ -514,7 +514,7 @@ function bennysChangeNeonColor(value) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.neon.color = rgb;
-    sendData("bennysChangeNeonColor", rgb);
+    $.post("http://bennys/bennysChangeNeonColor", JSON.stringify({rgb}));
 }
 
 function bennysChangeXenonColor(self, index) {
@@ -529,7 +529,8 @@ function bennysChangeXenonColor(self, index) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.xenonColour = index;
-    sendData("bennysSetXenonColor", {value: index});
+    $.post("http://bennys/bennysSetXenonColor", JSON.stringify({value: index}));
+
 }
 
 function bennysSetPlate(index, self) {
@@ -544,7 +545,7 @@ function bennysSetPlate(index, self) {
     }
     $("#precoTotalBennys").html(`R$ ${bennysTotalPrice},00`);
     bennysVehModifications.plate = index;
-    sendData("bennysSetPlateIndex", {plate: index});
+    $.post("http://bennys/bennysSetPlateIndex", JSON.stringify({plate: index}));
 }
 
 function handleHomeMenuItemClick(self) {
@@ -554,7 +555,6 @@ function handleHomeMenuItemClick(self) {
 
     if (modIndex == "turbo") {
         shopContent.html(`
-            <div class="boxes">
                 <div class="box" ${
             bennysVehModifications[18] && 'class="box"'
         } onclick="bennysToogleMod(true,this)" mod="18">Ativar
@@ -573,7 +573,6 @@ function handleHomeMenuItemClick(self) {
                         <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
                     </div>
                 </div>
-            </div>
         `);
     } else if (modIndex == 'plate') {
 
@@ -591,11 +590,17 @@ function handleHomeMenuItemClick(self) {
             bennysVehModifications.plate == k
                 ? 'class="box"'
                 : ""
-        } onclick="bennysSetPlate(${k},this)" >${v}</div>
+        } onclick="bennysSetPlate(${k},this)" >${v}
+                 <img src="../assets/bennys/tire.svg" alt="" class="slider__image">
+                 <div class="price">
+                <p>1000</p>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+                </div>
+            </div>
         `)
 
         shopContent.html(`
-            <div class="boxes">
+            <div class="">
                 ${shopContentHtml}
             </div>
         `);
@@ -624,27 +629,26 @@ function handleHomeMenuItemClick(self) {
             (v, k) =>
                 (shopContentHtml += `
         <div class="box ${
-                    bennysVehModifications.xenonColor == k ? "box" : ""
-                }" onclick="bennysChangeXenonColor(this, ${k})" style="background-image: url('${defaultImgUrl}');">
-            <div>
-                <span>${v}</span>
+                    bennysVehModifications.xenonColor == k ? "" : ""
+                }" onclick="bennysChangeXenonColor(this, ${k})">         
+            <span>${v}</span>
+            <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
+            <div class="price">
                 <b>R$ ${bennysModTypes[22].price}</b>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
             </div>
         </div>
         `)
         );
 
         shopContentHtml = `
-            <div class="box">
-                <div ${
-            bennysVehModifications[22] ? 'class="box"' : ""
-        } onclick="bennysToogleMod(true,this)" mod="22" >Ativar</div>
-                <div ${
-            !bennysVehModifications[22] ? 'class="box"' : ""
-        } onclick="bennysToogleMod(false,this)" mod="22" >Desativar</div>
-            </div>
-            <br>
-            <div class="boxes">${shopContentHtml}</div>
+                <div class="box" ${
+            bennysVehModifications[22] ? '' : ""
+        } onclick="bennysToogleMod(true,this)" mod="22">Ativar</div>
+                <div class="box" ${
+            !bennysVehModifications[22] ? '' : ""
+        } onclick="bennysToogleMod(false,this)" mod="22">Desativar</div>
+            ${shopContentHtml}
         `;
 
         shopContent.html(shopContentHtml);
@@ -970,7 +974,7 @@ function setHomeMenu() {
             let defaultImgUrl = `../assets/bennys/wheel`
             text += `
                     <div class="custom-option" mod-index="${v.modIndex}" onclick="handleHomeMenuItemClick(this)" >
-                        <img src="../assets/bennys/painter.svg" alt="" class="slider__image">
+                        <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
                         <span  class="slider__text">${v.name}</span>
                     </div>
 			`;
@@ -990,7 +994,7 @@ function setHomeMenu() {
     // aside.html(asideHtml)
 
     updateHoverActive();
-    showSlides(n);
+    showSlides();
 }
 
 let slideIndex = 1;
@@ -1010,9 +1014,9 @@ function showSlides(n) {
         slideIndex = slides.length
     }
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i]["style"].display = "none";
     }
-    slides[slideIndex - 1].style.display = "flex";
+    slides[slideIndex - 1]["style"].display = "flex";
 }
 
 function updateHoverActive() {
@@ -1044,22 +1048,17 @@ function initBennysNUI(config, vehModifications, availableModifications, modType
 
 
 function SaveBennys() {
-
-    $.post("http:/rb_garagem/BennysTryPayment", JSON.stringify({
+    $.post("http://bennys/BennysTryPayment", JSON.stringify({
         price: bennysTotalPrice
     }), (data) => {
         if (data.success == true) {
-
-            sendData('bennysSave', {});
+            $.post('http://bennys/bennysSave', {})
             $('#actionmenuBennys').fadeOut(1);
         } else {
-            $.post("http://rb_garagem/bennysClose")
+            $.post("http://bennys/bennysClose")
             $('#actionmenuBennys').fadeOut(1);
-
         }
-
     })
-
 }
 
-document.onkeypress = ({key}) => key == "h" && sendData("bennysSetFocus", {})
+document.onkeypress = ({key}) => key == "h" && $.post("http://bennys/bennysSetFocus", {})

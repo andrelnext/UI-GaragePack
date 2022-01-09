@@ -70,6 +70,8 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
 .space {
@@ -149,29 +151,55 @@ body {
 .container-bennys {
   display: flex;
   align-items: flex-end;
-  padding-left: 20px;
+  padding-left: 10px;
   position: relative;
+}
+.container-bennys .glass-right {
+  display: flex;
+  margin-right: 0.7%;
 }
 .container-bennys .custom-option {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 1.5%;
-  width: 15vw;
+  width: 9.5vw;
   height: 10vh;
   background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
   border: 3px solid rgba(255, 255, 255, 0.28);
-  box-sizing: border-box;
-  /* Note: backdrop-filter has minimal browser support */
   border-radius: 36px;
 }
 .container-bennys .custom-option img {
   color: white;
   width: 65px;
 }
-.container-bennys .slideshow-container {
-  max-width: 75%;
+
+.slideshow-container {
+  max-width: 90%;
+  display: flex;
+}
+.slideshow-container svg {
+  fill: white;
+}
+.slideshow-container #customization {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+}
+.slideshow-container #performance {
+  display: none;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+}
+.slideshow-container #appearance {
+  display: none;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+}
+.slideshow-container #wheels {
+  display: none;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
 }
 
 #section-Aparência {
@@ -208,13 +236,8 @@ body {
 }
 
 .next img {
-  display: flex;
-  margin-left: 5px;
-  margin-right: 5px;
-  position: absolute;
-  top: 92.5%;
-  left: 100%;
-  transform: translate(-50%, 0%);
+  position: relative;
+  top: 80%;
 }
 
 .rightbox {
