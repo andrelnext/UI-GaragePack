@@ -158,11 +158,16 @@ body {
   display: flex;
   margin-right: 0.7%;
 }
+.container-bennys .glass-right small {
+  display: flex;
+}
 .container-bennys .custom-option {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 1vw;
+  margin-top: 1vh;
   width: 9.5vw;
   height: 10vh;
   background: linear-gradient(111.68deg, rgba(255, 255, 255, 0.29) 7.59%, rgba(255, 255, 255, 0.39) 102.04%);
@@ -224,9 +229,25 @@ body {
   border: 3px solid rgba(255, 255, 255, 0.28);
   border-radius: 36px;
 }
+.boxes .box input {
+  width: 100%;
+  height: 8vh;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.boxes .box span {
+  word-break: break-all;
+}
 .boxes .box .slider__image {
   width: 4vw;
   height: 6vh;
+}
+.boxes .box .input-color {
+  border-radius: 360%;
 }
 .boxes .box .price {
   display: flex;

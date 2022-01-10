@@ -31,6 +31,7 @@ $(document).ready(function () {
     $('#section-Aparência, #section-Customização, #section-Performance, #section-Interior, #section-Rodas, #section-Extras').click(function () {
             $('.color-picker-panel').css('display', 'none');
             $('.info').css('display', 'none');
+            $('#logobennys').css('display', 'none');
             $('.boxes').css('display', 'flex');
         }
     );
@@ -600,9 +601,9 @@ function handleHomeMenuItemClick(self) {
         `)
 
         shopContent.html(`
-            <div class="">
+
                 ${shopContentHtml}
-            </div>
+
         `);
 
         $("#bennys-title").html("Cor da Placa");
@@ -659,23 +660,26 @@ function handleHomeMenuItemClick(self) {
         neonPositions.map(
             (v, k) =>
                 (shopContentHtml += `
-            <div ${
-                    bennysVehModifications.neon[k] ? 'class="box"' : ""
+            <div class="box" ${
+                    bennysVehModifications.neon[k] ? '' : ""
                 } onclick="bennysToggleNeon(this, ${k})" >${v}</div>
         `)
         );
 
         shopContent.html(`
-            <div class="boxes">
                 ${shopContentHtml}
-            </div>
-            <div>
+          <div class="box">   
+            Cor   
                 <input oninput="bennysChangeNeonColor(this.value)" type="color" value="${rgbToHex(
             bennysVehModifications.neon.color.r,
             bennysVehModifications.neon.color.g,
             bennysVehModifications.neon.color.b
         )}">
+         <div class="price">
+                <p>1000</p>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
             </div>
+        </div>
         `);
         $("#bennys-title").html("Neon");
     } else if (modIndex == "windowTintColour") {
@@ -692,18 +696,23 @@ function handleHomeMenuItemClick(self) {
         windowColors.map(
             (v, k) =>
                 (shopContentHtml += `
-            <button ${
+            <div class="box" ${
                     bennysVehModifications.windowTint == k
-                        ? 'class="box"'
+                        ? ''
                         : ""
-                } onclick="bennysSetWindowTint(${k},this)" >${v}</button>
+                } onclick="bennysSetWindowTint(${k},this)" >
+            <span>${v}</span>
+            <img src="../assets/bennys/painter.svg" alt="" class="slider__image">
+            <div class="price">
+                <b>1000</b>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+            </div>
+            </div>
         `)
         );
 
         shopContent.html(`
-            <div class="boxes">
                 ${shopContentHtml}
-            </div>
         `);
         $("#bennys-title").html("Cor do vidro");
     } else if (modIndex == "tyreSmoke") {
@@ -728,11 +737,19 @@ function handleHomeMenuItemClick(self) {
                 <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
             </div>
         </div>
-        <input oninput="changeTyreSmokeColour(this.value)" type="color" value="${rgbToHex(
+        <div class="box">   
+            Cor       
+            <input oninput="changeTyreSmokeColour(this.value)" type="color" value="${rgbToHex(
             bennysVehModifications.tyreSmokeColour.r,
             bennysVehModifications.tyreSmokeColour.g,
             bennysVehModifications.tyreSmokeColour.b
         )}">
+             <div class="price">
+                <p>1000</p>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+            </div>
+        </div>
+
         `);
         $("#bennys-title").html("Cor da Fumaça do Pneu");
     } else if (modIndex == "pearlescentColour") {
@@ -744,17 +761,17 @@ function handleHomeMenuItemClick(self) {
                 "box"
             }" onclick="handlePearlescentColour(this)" colour-index="${
                 v.colorindex
-            }" style="background-image: url('${defaultImgUrl}');">
-					<div>
-						<span>${v.name}</span>
-						<b>R$ ${"500,00"}</b>
-					</div>
+            }">
+                <span>${v.name}</span>
+                            <img src="../assets/bennys/painter.svg" alt="" class="slider__image">
+					<div class="price">
+						<b>1000</b>             
+						 <img src="../assets/monetization_on_24px.svg" alt="" class="icon">             
+               </div>
 				</div>
 			`;
         });
 
-        shopContentHtml =
-            '<div class="boxes">' + shopContentHtml + "</div>";
 
         shopContent.html(shopContentHtml);
         $("#bennys-title").html("Cor do Perolado");
@@ -762,71 +779,89 @@ function handleHomeMenuItemClick(self) {
         let paintTypes = "";
 
         bennysPaintTypes.map((v, k) => {
-            paintTypes += `<button ${
+            paintTypes += `<div class="box" ${
                 (bennysVehModifications.primaryPaintType == k &&
-                    'class="box"') ||
+                    '') ||
                 ""
-            } onclick="setVehPaintType(${k},1,this)">${v}</button>`;
+            } onclick="setVehPaintType(${k},1,this)">           
+            <span>${v}</span>
+            <img src="../assets/bennys/painter.svg" alt="" class="slider__image">
+                <div class="price">
+                    <b>1000</b>
+                    <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+                </div>
+            </div>`;
         });
 
         shopContent.html(`
             <div class="box">
+            Cor
                 ${paintTypes}
-            </div>
-
-            <div class="box">
                 <input oninput="changeVehColor(this.value,1)" type="color" value="${rgbToHex(
             bennysVehModifications.primaryColour.r,
             bennysVehModifications.primaryColour.g,
             bennysVehModifications.primaryColour.b
         )}">
+                     <div class="price">
+                <p>1000</p>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
             </div>
+        </div></div>
+   
         `);
         $("#bennys-title").html("Cor Primária");
     } else if (modIndex == "secondaryColour") {
         let paintTypes = "";
 
         bennysPaintTypes.map((v, k) => {
-            paintTypes += `<div ${
+            paintTypes += `<div class="box" ${
                 (bennysVehModifications.primaryPaintType == k &&
-                    'class="box"') ||
+                    '') ||
                 ""
-            } onclick="setVehPaintType(${k},2,this)">${v}</div>`;
+            } onclick="setVehPaintType(${k},2,this)">
+            <span>${v}</span>
+            <img src="../assets/bennys/painter.svg" alt="" class="slider__image">
+            <div class="price">
+                <b>1000</b>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+            </div>
+            </div>`;
         });
 
         shopContent.html(`
-            <div class="boxes">
+            <div class="box">
+            Cor
                 ${paintTypes}
-            </div>
-
-            <div>
                 <input oninput="changeVehColor(this.value,2)" type="color" value="${rgbToHex(
             bennysVehModifications.secondaryColour.r,
             bennysVehModifications.secondaryColour.g,
             bennysVehModifications.secondaryColour.b
         )}">
+                         <div class="price">
+                <p>1000</p>
+                <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
             </div>
+        </div></div>
         `);
         $("#bennys-title").html("Cor Secundária");
     } else if (modIndex == "wheelColour") {
         let defaultImgUrl = `../assets/bennys/wheel`
         bennysWheelColours.map((v) => {
             shopContentHtml += `
-                <div class=" ${
+                <div class="box ${
                 bennysVehModifications.wheelColour == v.colorindex
             }" onclick="handleWheelColour(this)" colour-index="${
                 v.colorindex
-            }" style="background-image: url('../assets/bennys/wheel');">
-					<div class="box">
-						<span>${v.name}</span>
-						<b>R$ ${"500,00"}</b>
-					</div>
+            }">
+                    <span>${v.name}</span>
+                    <img src="../assets/bennys/wheel.svg" alt="" class="slider__image">
+                    <div class="price">
+                        <b>1000</b>
+                        <img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+                    </div>
 				</div>
 			`;
         });
-
-        shopContentHtml =
-            '<div>' + shopContentHtml + "</div>";
 
         shopContent.html(shopContentHtml);
         updateHoverActive();
@@ -836,19 +871,16 @@ function handleHomeMenuItemClick(self) {
             let bgImg = `../assets/bennys/wheel`;
             let dfUrl = `../assets/bennys/wheel`
             text = `
-                <div class="item" wheel-type="6" onclick="handleWheelChange(this)" style="background-image: url('${bgImg}.png');">
+                <div class="box" wheel-type="6" onclick="handleWheelChange(this)">
                     <span>Roda Dianteira</span>
                 </div>
-                <div class="item" wheel-type="6" rear-wheel="true" onclick="handleWheelChange(this)" style="background-image: url('${bgImg}.png'), url('${dfUrl}.png');">
+                <div class="box" wheel-type="6" rear-wheel="true" onclick="handleWheelChange(this)">
                     <span>Roda Traseira</span>
                 </div>
             `
             shopContentHtml += `
-                <div class="box">
-                    <div>
                         ${text}
-                    </div>
-                </div>
+ 
             `;
         } else {
             for (let i = 0; i <= 12; i++) {
@@ -856,18 +888,15 @@ function handleHomeMenuItemClick(self) {
                     let bgImg = `../assets/bennys/wheel`;
                     let dfUrl = `../assets/bennys/wheel`
                     text += `
-                    <div class="item" wheel-type="${i}" onclick="handleWheelChange(this)" style="background-image: url('${bgImg}.png'), url('${dfUrl}.png');">
+                    <div class="box" wheel-type="${i}" onclick="handleWheelChange(this)">
                         <span>${bennysWheelTypes[i]}</span>
+                        <img src="../assets/bennys/wheel.svg" alt="" class="slider__image">
                     </div>
                 `;
                 }
             }
             shopContentHtml += `
-                <div class="box">
-                    <div>
                         ${text}
-                    </div>
-                </div>
             `;
         }
 
@@ -880,9 +909,9 @@ function handleHomeMenuItemClick(self) {
             let defaultUrl = `../assets/bennys/wheel`
             shopContentHtml += `
 				<div class="box ${
-                bennysVehModifications[modIndex] == i && "box"
+                bennysVehModifications[modIndex] == i
             }" onclick="handleVehicleModChange(this)" mod="${i}" mod-index="${modIndex}" style="background-image: url('${imgUrl}.png'), url('${defaultUrl}.png');">
-					<div>
+
 						<span>${
                 customNames[modIndex]
                     ? customNames[modIndex][i]
@@ -892,14 +921,14 @@ function handleHomeMenuItemClick(self) {
                         i
                         ] || "Nível " + (i + 1)
             }</span>
-						<b>R$ ${bennysModTypes[modIndex].price}</b>
-					</div>
+				    <img src="../assets/bennys/interior.svg" alt="" class="slider__image">
+				    <div class="price">
+						<b>${bennysModTypes[modIndex].price}</b>
+						<img src="../assets/monetization_on_24px.svg" alt="" class="icon">
+                    </div>
 				</div>
 			`;
         }
-
-        shopContentHtml =
-            '<div class="boxes">' + shopContentHtml + "</div>";
 
         shopContent.html(shopContentHtml);
         $("#bennys-title").html(bennysModTypes[modIndex].name);
@@ -974,7 +1003,7 @@ function setHomeMenu() {
             let defaultImgUrl = `../assets/bennys/wheel`
             text += `
                     <div class="custom-option" mod-index="${v.modIndex}" onclick="handleHomeMenuItemClick(this)" >
-                        <img src="../assets/bennys/brake.svg" alt="" class="slider__image">
+                        <img src="../assets/bennys/engine.svg" alt="" class="slider__image">
                         <span  class="slider__text">${v.name}</span>
                     </div>
 			`;
